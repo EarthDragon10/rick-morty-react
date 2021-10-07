@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useEffect, useState} from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,7 +7,11 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-export default function Character() {
+export default function Character(props) {
+
+  const [singleImage, setImage] = useState([]);
+
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -15,7 +19,7 @@ export default function Character() {
           component='img'
           alt='green iguana'
           height='140'
-          image='/static/images/cards/contemplative-reptile.jpg'
+          image={props.image}
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
