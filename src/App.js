@@ -1,6 +1,5 @@
 import Characters from "./Characters";
 import Navigation from "./Navigation";
-import Axios from "axios"
 
 function App() {
   return (
