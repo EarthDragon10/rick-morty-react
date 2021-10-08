@@ -5,6 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+
 import { CardActionArea } from "@mui/material";
 
 export default function Character(props) {
@@ -14,26 +18,27 @@ export default function Character(props) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia
-          component='img'
-          alt='green iguana'
-          height='140'
-          image={props.image}
-        />
+        <CardMedia component='img' alt={props.name} height='250' image={props.image} />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
-            <h2>{props.name}</h2>
-            
+            {props.name}
           </Typography>
-          <Typography variant='body2' color='text.secondary'>
-          <h3>{props.type}</h3>
-          <h3>{props.gender}</h3>
-          </Typography>
+          <List dense>
+            <ListItem sx={{ pl: 0 }}>
+              <ListItemText primary='STATUS' secondary={props.status} />
+            </ListItem>
+            <ListItem sx={{ pl: 0 }}>
+              <ListItemText primary='GENDER' secondary={props.gender} />
+            </ListItem>
+            <ListItem sx={{ pl: 0 }}>
+              <ListItemText primary='SPECIES' secondary={props.species} />
+            </ListItem>
+          </List>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size='small'>Learn More</Button>
       </CardActions>
     </Card>
-  );
+  )
 }
