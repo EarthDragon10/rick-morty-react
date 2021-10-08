@@ -9,7 +9,6 @@ import { CardActionArea } from "@mui/material";
 
 export default function Character(props) {
 
-  const [singleImage, setImage] = useState([]);
 
   
   return (
@@ -23,11 +22,12 @@ export default function Character(props) {
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
-            Lizard
+            <h2>{props.name}</h2>
+            
           </Typography>
           <Typography variant='body2' color='text.secondary'>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <h3>{props.type}</h3>
+          <h3>{props.gender}</h3>
           </Typography>
         </CardContent>
       </CardActionArea>

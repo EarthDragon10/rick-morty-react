@@ -7,7 +7,7 @@ import axios from "axios"
 export default function Characters() {
 
   const [characters, setCharacter] =  useState([]);
-  const [charactersImage, setImage] = useState([]);
+
 
   useEffect( () => {
     async function fetchData() {
@@ -15,8 +15,6 @@ export default function Characters() {
       .get("https://rickandmortyapi.com/api/character")
       .then((response) => {
         setCharacter(response.data.results)
-        const getImages = response.data.results.map(elem => elem.image)
-        setImage(getImages);
       })
       .catch((error) => console.log(error))
     }
@@ -25,26 +23,24 @@ export default function Characters() {
 
   }, [])
   
-  // console.log(characters)
-  console.log(charactersImage);
+  console.log(characters)
+  // console.log(charactersImage);
   
 
   return (
     <Container fixed sx={{ mt: 4 }}>
+      
       <Grid container spacing={2}>
-        <Grid item xs={3}>
-          <Character image={charactersImage} />
-        </Grid>
-        <Grid item xs={3}>
-          <Character />
-        </Grid>
-        <Grid item xs={3}>
-          <Character />
-        </Grid>
-        <Grid item xs={3}>
-          <Character />
-        </Grid>
+        {characters.map((elem) => {
+          return (
+            <Grid item xs={3}>
+              <Character key={elem.id} image={elem.image} name={elem.name} type={elem.type} gender={elem.gender} />
+            </Grid>
+          )
+        })
+          }
       </Grid>
+
     </Container>
   );
 }
