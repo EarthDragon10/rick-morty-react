@@ -3,7 +3,6 @@ import { Container, Grid } from "@mui/material";
 import Character from "./Character";
 import axios from "axios"
 
-
 export default function Characters({page}) {
 
   const [characters, setCharacter] =  useState([]);
@@ -27,6 +26,7 @@ export default function Characters({page}) {
   
 
   return (
+
     <Container fixed sx={{ mt: 4 }}>
       
       <Grid container spacing={2}>
