@@ -1,12 +1,9 @@
 import React from "react";
+import Characters from "./Characters/index";
 
 const SingleCharacter = () => {
   return (
-
-          <div>
-            <h2>Router di Prova</h2>
-          </div>
-
+    <Characters />
   )
 }
 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {BroswerRouter as Router, Switch, Route } from "react-router-dom";
-import SingleCharacter from "./Characters/Components/SIngleCharacter"
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SingleCharacter from "./SIngleCharacter"
 import Home from "./Home"
 
 function App() {
@@ -11,11 +11,17 @@ function App() {
 
     <div className="App">
       <Router>
-        <Switch>
-          <Route>
-            
-          </Route>
-        </Switch>
+        <div>
+          <Switch>
+            <Route exact path="./">
+              <Home page={page} setPage={setPage} />
+            </Route>
+            <Route path="single-character">
+              <SingleCharacter />
+            </Route>
+          </Switch>
+        </div>
+        
       </Router>
     </div>
 
@@ -23,3 +29,5 @@ function App() {
 
     
 }
+
+export default App;

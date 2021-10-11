@@ -1,4 +1,3 @@
-import {useState, useEffect} from "react";
 
 import Characters from "./Characters";
 import Navigation from "./Navigation";
@@ -6,9 +5,8 @@ import Navigation from "./Navigation";
 
 
 
-function Home() {
+function Home({page, setPage}) {
 
-  const [page, setPage] = useState(1);
 
   return (
     <div>
